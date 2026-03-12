@@ -1,0 +1,18 @@
+function returnBook(){
+
+let isbn=document.getElementById("isbn").value;
+
+let books=JSON.parse(localStorage.getItem("books"));
+
+for(let i=0;i<books.length;i++)
+{
+if(books[i].isbn===isbn)
+{
+books[i].available=true;
+alert("Book Returned");
+}
+}
+
+localStorage.setItem("books",JSON.stringify(books));
+
+}
